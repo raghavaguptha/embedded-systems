@@ -1,0 +1,56 @@
+C51 COMPILER V8.02   MAIN                                                                  05/02/2024 14:55:13 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #define led P1
+   3          void delay(int val);
+   4          void main()
+   5          {
+   6   1      led = 0x01;
+   7   1      delay(100);
+   8   1      led = 0x02;
+   9   1      delay(100);
+  10   1      led = 0x04;
+  11   1      delay(100);
+  12   1      led = 0x08;
+  13   1      delay(100);
+  14   1      led = 0x10;
+  15   1      delay(100);
+  16   1      led = 0x20;
+  17   1      delay(1000);
+  18   1      led = 0x40;
+  19   1      delay(100);
+  20   1      led = 0x80;
+  21   1      delay(100);
+  22   1      }
+  23          
+  24          void delay(int val)
+  25          {
+  26   1          int i,j=0;
+  27   1              for( i=0;i<=val;i++)
+  28   1              {
+  29   2                for( j=0;j<=1000;j++);
+  30   2              }
+  31   1      }
+  32          
+  33          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     98    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

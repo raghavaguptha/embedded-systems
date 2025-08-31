@@ -1,0 +1,103 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Admin\Desktop\led blink_port1\main.uv2
+Project File Date:  05/02/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=40
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(18): error C141: syntax error near 'int'
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C141: syntax error near ')'
+MAIN.C(20): error C141: syntax error near 'int'
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(18): error C141: syntax error near 'int'
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C141: syntax error near ')'
+MAIN.C(20): error C141: syntax error near 'int'
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(18): error C141: syntax error near 'int'
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C141: syntax error near ')'
+MAIN.C(20): error C141: syntax error near 'int'
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(18): error C141: syntax error near 'int'
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C141: syntax error near ')'
+MAIN.C(20): error C141: syntax error near 'int'
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C202: 'j': undefined identifier
+MAIN.C(20): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(18): error C141: syntax error near 'int'
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C202: 'i': undefined identifier
+MAIN.C(18): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?MAIN
+Program Size: data=9.0 xdata=0 code=78
+creating hex file from "main"...
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=109
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=113
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=113
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=113
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).

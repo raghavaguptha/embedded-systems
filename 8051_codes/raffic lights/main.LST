@@ -1,0 +1,99 @@
+C51 COMPILER V8.02   MAIN                                                                  05/02/2024 15:58:50 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          sbit e_red = P1^0;
+   4          sbit e_green = P1^1;
+   5          sbit e_yellow = P1^2;
+   6          
+   7          sbit w_red = P1^3;
+   8          sbit w_green = P1^4;
+   9          sbit w_yellow = P1^5;
+  10          void delay(int val);
+  11          void get_ready_e();
+  12          void get_ready_w();
+  13          
+  14          
+  15          void main()
+  16          {
+  17   1      while(1)
+  18   1      {
+  19   2        e_red = 0;
+  20   2        e_green = 1;
+  21   2        e_yellow = 0;
+  22   2        w_red = 1;
+  23   2        w_green = 0;
+  24   2        w_yellow = 0;
+  25   2        delay(1000);
+  26   2      
+  27   2        get_ready_w();
+  28   2      
+  29   2         e_red = 1;
+  30   2        e_green = 0;
+  31   2        e_yellow = 0;
+  32   2        w_red = 0;
+  33   2        w_green = 1;
+  34   2        w_yellow = 0;
+  35   2        delay(1000);
+  36   2      
+  37   2        get_ready_e();
+  38   2       
+  39   2      }
+  40   1      }
+  41          
+  42          
+  43          void delay(int val)
+  44          {
+  45   1              int i,j=0;
+  46   1              for(i=0;i<=val;i++)
+  47   1              {
+  48   2              for(j=0;j<=1000;j++);
+  49   2              }
+  50   1      }
+  51          
+  52          void get_ready_e()
+  53          {
+  54   1          int a=0;
+  55   1              for(a=0;a<=5;a++)
+C51 COMPILER V8.02   MAIN                                                                  05/02/2024 15:58:50 PAGE 2   
+
+  56   1              {
+  57   2              e_yellow = 1; 
+  58   2              delay(50);
+  59   2              e_yellow = 0; 
+  60   2              delay(50);
+  61   2              }
+  62   1      }
+  63          
+  64          void get_ready_w()
+  65          {
+  66   1          int a=0;
+  67   1              for(a=0;a<=5;a++)
+  68   1              {
+  69   2              w_yellow = 1; 
+  70   2              delay(50);
+  71   2              w_yellow = 0; 
+  72   2              delay(50);
+  73   2              }
+  74   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    136    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

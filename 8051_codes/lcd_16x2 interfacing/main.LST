@@ -1,0 +1,91 @@
+C51 COMPILER V8.02   MAIN                                                                  05/06/2024 15:18:48 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          #define lcd P2
+   4          
+   5          sbit rs = P3^0;
+   6          sbit en = P3^1;
+   7          
+   8          void lcd_data(unsigned char ch);
+   9          void lcd_cmd(unsigned char ch);
+  10          void lcd_init();
+  11          void delay(int val);
+  12          
+  13          void main()
+  14          {
+  15   1          lcd_init();
+  16   1              while(1)
+  17   1              {
+  18   2                 lcd_cmd(0x01);
+  19   2                 lcd_cmd(0x80);
+  20   2                 lcd_data('H');
+  21   2                 lcd_data('I');
+  22   2                 lcd_cmd(0xC0);
+  23   2                 lcd_data('H');
+  24   2                 lcd_data('E');
+  25   2                 lcd_data('L');
+  26   2                 lcd_data('L');
+  27   2                 lcd_data('O');
+  28   2                 delay(100);
+  29   2              }
+  30   1      
+  31   1      }
+  32          
+  33          void lcd_cmd(unsigned char ch)
+  34          {
+  35   1              rs = 0;
+  36   1              lcd = ch;
+  37   1              en=1;
+  38   1              delay(1);
+  39   1              en=0;
+  40   1      }
+  41          
+  42          void lcd_data(unsigned char ch)
+  43          {
+  44   1              rs=1;
+  45   1              lcd = ch;
+  46   1              en=1;
+  47   1              delay(1);
+  48   1              en=0;
+  49   1      }
+  50          
+  51          void lcd_init()
+  52          {
+  53   1      lcd_cmd(0x38); //8bit 2 lines
+  54   1      lcd_cmd(0x01); //to clear screen
+  55   1      lcd_cmd(0x0E); //display on corsur on
+C51 COMPILER V8.02   MAIN                                                                  05/06/2024 15:18:48 PAGE 2   
+
+  56   1      lcd_cmd(0x06);
+  57   1      }
+  58          
+  59          void delay(int val)
+  60          {
+  61   1       int i,j=0;
+  62   1       for(i=0;i<=val;i++)
+  63   1       {
+  64   2         for(j=0;j<=1000;j++);
+  65   2       }
+  66   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    144    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
