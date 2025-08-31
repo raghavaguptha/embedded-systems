@@ -1,0 +1,150 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Admin\Desktop\codes\keypad interfacing\main.uv2
+Project File Date:  05/07/2024
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+Program Size: data=0.0 xdata=0 code=0
+creating hex file from "main"...
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(23): error C141: syntax error near '}', expected ';'
+MAIN.C(24): error C141: syntax error near '}', expected ';'
+MAIN.C(25): error C141: syntax error near '}', expected ';'
+MAIN.C(28): error C141: syntax error near '}', expected ';'
+MAIN.C(29): error C141: syntax error near '}', expected ';'
+MAIN.C(30): error C141: syntax error near '}', expected ';'
+MAIN.C(33): error C141: syntax error near '}', expected ';'
+MAIN.C(34): error C141: syntax error near '}', expected ';'
+MAIN.C(35): error C141: syntax error near '}', expected ';'
+MAIN.C(38): error C141: syntax error near '}', expected ';'
+MAIN.C(39): error C141: syntax error near '}', expected ';'
+MAIN.C(40): error C141: syntax error near '}', expected ';'
+MAIN.C(43): error C141: syntax error near '}', expected ';'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(23): error C141: syntax error near '}', expected ';'
+MAIN.C(24): error C141: syntax error near '}', expected ';'
+MAIN.C(25): error C141: syntax error near '}', expected ';'
+MAIN.C(28): error C141: syntax error near '}', expected ';'
+MAIN.C(29): error C141: syntax error near '}', expected ';'
+MAIN.C(30): error C141: syntax error near '}', expected ';'
+MAIN.C(33): error C141: syntax error near '}', expected ';'
+MAIN.C(34): error C141: syntax error near '}', expected ';'
+MAIN.C(35): error C141: syntax error near '}', expected ';'
+MAIN.C(38): error C141: syntax error near '}', expected ';'
+MAIN.C(39): error C141: syntax error near '}', expected ';'
+MAIN.C(40): error C141: syntax error near '}', expected ';'
+MAIN.C(43): error C141: syntax error near '}', expected ';'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?READ_KEYPAD?MAIN
+Program Size: data=9.0 xdata=0 code=160
+creating hex file from "main"...
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(16): warning C206: 'get_key': missing function-prototype
+MAIN.C(46): error C231: 'get_key': redefinition
+MAIN.C(53): error C231: 'get_key': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(17): error C193: '=': illegal type conversion from/to 'void'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(53): error C174: return-expression on void-function
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(53): error C174: return-expression on void-function
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(47): error C231: 'get_key': redefinition
+MAIN.C(55): error C231: 'get_key': redefinition
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=174
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=176
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(70): error C141: syntax error near 'delay'
+MAIN.C(79): error C141: syntax error near 'delay'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(70): error C141: syntax error near 'delay'
+MAIN.C(79): error C141: syntax error near 'delay'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(70): error C141: syntax error near 'delay'
+MAIN.C(79): error C141: syntax error near 'delay'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(79): error C141: syntax error near 'delay'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LCD_DATA?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LCD_INIT?MAIN
+Program Size: data=10.0 xdata=0 code=258
+creating hex file from "main"...
+"main" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=271
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=271
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=271
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=271
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=10.0 xdata=0 code=271
+creating hex file from "main"...
+"main" - 0 Error(s), 0 Warning(s).

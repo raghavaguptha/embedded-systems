@@ -1,0 +1,156 @@
+C51 COMPILER V8.02   MAIN                                                                  05/09/2024 12:54:24 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          sbit room_light = P1^2;
+   4          sbit hall_light = P1^3;
+   5          
+   6          sbit r1 = P2^0;
+   7          sbit r2 = P2^1;
+   8          sbit r3 = P2^2;
+   9          sbit r4 = P2^3;
+  10          
+  11          sbit c1 = P2^4;
+  12          sbit c2 = P2^5;
+  13          sbit c3 = P2^6;
+  14          
+  15          #define lcd P3
+  16          sbit rs = P1^0;
+  17          sbit en = P1^1;
+  18          char read_keypad();
+  19          char get_key();
+  20          void lcd_cmd(unsigned char ch);
+  21          void lcd_data(unsigned char ch);
+  22          void lcd_init();
+  23          void delay(int val);
+  24          void display(unsigned char s[]);
+  25          void main()
+  26          {
+  27   1              room_light=0;
+  28   1              hall_light=0;
+  29   1          lcd_init();
+  30   1              lcd_cmd(0x01);
+  31   1              lcd_cmd(0x80);
+  32   1              display("Load_1:");
+  33   1              lcd_cmd(0xC0);
+  34   1              display("Load_2:");
+  35   1              while(1)
+  36   1              {
+  37   2               char new_key = get_key();
+  38   2               lcd_cmd(0x8f);
+  39   2               lcd_data(new_key);
+  40   2               if(new_key == '1'){room_light=1; lcd_cmd(0x88); display("ON ");}
+  41   2               if(new_key == '2'){room_light=0;lcd_cmd(0x88); display("OFF");}
+  42   2               if(new_key == '3'){hall_light=1;}
+  43   2               if(new_key == '4'){hall_light=0;}
+  44   2              }
+  45   1      }
+  46          
+  47          
+  48          char read_keypad()
+  49          {
+  50   1        r1=0;r2=1;r3=1;r4=1;
+  51   1        if(c1==0){while(c1==0); return '1';}
+  52   1        if(c2==0){while(c2==0); return '2';}
+  53   1        if(c3==0){while(c3==0); return '3';}
+  54   1      
+  55   1        r1=1;r2=0;r3=1;r4=1;
+C51 COMPILER V8.02   MAIN                                                                  05/09/2024 12:54:24 PAGE 2   
+
+  56   1        if(c1==0){while(c1==0); return '4';}
+  57   1        if(c2==0){while(c2==0); return '5';}
+  58   1        if(c3==0){while(c3==0); return '6';}
+  59   1      
+  60   1        r1=1;r2=1;r3=0;r4=1;
+  61   1        if(c1==0){while(c1==0); return '7';}
+  62   1        if(c2==0){while(c2==0); return '8';}
+  63   1        if(c3==0){while(c3==0); return '9';}
+  64   1      
+  65   1          r1=1;r2=1;r3=1;r4=0;
+  66   1        if(c1==0){while(c1==0); return '*';}
+  67   1        if(c2==0){while(c2==0); return '0';}
+  68   1        if(c3==0){while(c3==0); return '#';}
+  69   1      
+  70   1        return 'n';
+  71   1      }
+  72          
+  73          
+  74          char get_key()
+  75          {
+  76   1       char key = 'n';
+  77   1       while(key == 'n')
+  78   1       {
+  79   2         key = read_keypad();
+  80   2       }
+  81   1       return key;
+  82   1      }
+  83          
+  84          
+  85          void lcd_cmd(unsigned char ch)
+  86          {
+  87   1      rs = 0;
+  88   1      lcd = ch;
+  89   1      en=1;
+  90   1      delay(1);
+  91   1      en=0;
+  92   1      }
+  93          
+  94          void lcd_data(unsigned char ch)
+  95          {
+  96   1      rs = 1;
+  97   1      lcd = ch;
+  98   1      en=1;
+  99   1      delay(1);
+ 100   1      en=0;
+ 101   1      }
+ 102          
+ 103          void lcd_init()
+ 104          {
+ 105   1          lcd_cmd(0x38);
+ 106   1              lcd_cmd(0x01);
+ 107   1              lcd_cmd(0x0E);
+ 108   1              lcd_cmd(0x06);
+ 109   1      }
+ 110          
+ 111          void delay(int val)
+ 112          {
+ 113   1       int i,j=0;
+ 114   1       for(i=0;i<=val;i++)
+ 115   1       {
+ 116   2       for(j=0;j<=1000;j++);
+ 117   2       }
+C51 COMPILER V8.02   MAIN                                                                  05/09/2024 12:54:24 PAGE 3   
+
+ 118   1      }
+ 119          
+ 120          
+ 121          void display(unsigned char s[])
+ 122          {
+ 123   1        int k=0;
+ 124   1        for(k=0;s[k]!='\0';k++)
+ 125   1        {
+ 126   2         lcd_data(s[k]);
+ 127   2        }
+ 128   1      }
+ 129          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    396    ----
+   CONSTANT SIZE    =     24    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,126 @@
+C51 COMPILER V8.02   MAIN                                                                  05/07/2024 16:00:00 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          #define lcd P3
+   4          sbit rs = P1^0;
+   5          sbit en = P1^1;
+   6          
+   7          sbit r1 = P2^0;
+   8          sbit r2 = P2^1;
+   9          sbit r3 = P2^2;
+  10          sbit r4 = P2^3;
+  11          
+  12          sbit c1 = P2^4;
+  13          sbit c2 = P2^5;
+  14          sbit c3 = P2^6;
+  15          char get_key();
+  16          char read_keypad();
+  17          void lcd_init();
+  18          void lcd_cmd(unsigned char ch);
+  19          void lcd_data(unsigned char ch);
+  20          void delay(int val);
+  21          void main()
+  22          {
+  23   1         lcd_init();
+  24   1              while(1)
+  25   1              {
+  26   2               char new_key = get_key();
+  27   2               lcd_cmd(0x80);
+  28   2               lcd_data(new_key);
+  29   2              }
+  30   1      } 
+  31          
+  32          char read_keypad()
+  33          {
+  34   1      r1=0;r2=1;r3=1;r4=1;
+  35   1      if(c1==0){while(c1==0);return '1';}
+  36   1      if(c2==0){while(c2==0);return '2';}
+  37   1      if(c3==0){while(c3==0);return '3';}
+  38   1      
+  39   1      r1=1;r2=0;r3=1;r4=1;
+  40   1      if(c1==0){while(c1==0);return '4';}
+  41   1      if(c2==0){while(c2==0);return '5';}
+  42   1      if(c3==0){while(c3==0);return '6';}
+  43   1      
+  44   1      r1=1;r2=1;r3=0;r4=1;
+  45   1      if(c1==0){while(c1==0);return '7';}
+  46   1      if(c2==0){while(c2==0);return '8';}
+  47   1      if(c3==0){while(c3==0);return '9';}
+  48   1      
+  49   1      r1=1;r2=1;r3=1;r4=0;
+  50   1      if(c1==0){while(c1==0);return '*';}
+  51   1      if(c2==0){while(c2==0);return '0';}
+  52   1      if(c3==0){while(c3==0);return '#';}
+  53   1      
+  54   1      return 'n';
+  55   1      }
+C51 COMPILER V8.02   MAIN                                                                  05/07/2024 16:00:00 PAGE 2   
+
+  56          
+  57          char get_key()
+  58          {
+  59   1      char key = 'n';
+  60   1      while(key == 'n')
+  61   1      {
+  62   2      key = read_keypad();
+  63   2      }
+  64   1       return key;
+  65   1      }
+  66          
+  67          
+  68          void lcd_cmd(unsigned char ch)
+  69          {
+  70   1      rs = 0;
+  71   1      lcd = ch;
+  72   1      en = 1;
+  73   1      delay(1);
+  74   1      en=0;
+  75   1      }
+  76          
+  77          void lcd_data(unsigned char ch)
+  78          {
+  79   1      rs = 1;
+  80   1      lcd = ch;
+  81   1      en = 1;
+  82   1      delay(1);
+  83   1      en=0;
+  84   1      }
+  85          
+  86          void lcd_init()
+  87          {
+  88   1      lcd_cmd(0x38);
+  89   1      lcd_cmd(0x01);
+  90   1      lcd_cmd(0x0E);
+  91   1      lcd_cmd(0x06);
+  92   1      }
+  93          
+  94          void delay(int val)
+  95          {
+  96   1      int i,j=0;
+  97   1      for(i=0;i<=val;i++)
+  98   1      {
+  99   2      for(j=0;j<=1000;j++);
+ 100   2      }
+ 101   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    256    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
