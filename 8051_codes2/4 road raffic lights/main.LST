@@ -1,0 +1,212 @@
+C51 COMPILER V8.02   MAIN                                                                  05/03/2024 10:26:31 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          sbit e_red = P1^0;
+   4          sbit e_green = P1^1;
+   5          sbit e_yellow = P1^2;
+   6          
+   7          sbit w_red = P1^3;
+   8          sbit w_green = P1^4;
+   9          sbit w_yellow = P1^5;
+  10          
+  11          sbit n_red = P2^0;
+  12          sbit n_green = P2^1;
+  13          sbit n_yellow = P2^2;
+  14          
+  15          sbit s_red = P2^3;
+  16          sbit s_green = P2^4;
+  17          sbit s_yellow = P2^5;
+  18          
+  19          
+  20          void delay(int val);
+  21          void get_ready_e();
+  22          void get_ready_w();
+  23          void get_ready_s();
+  24          void get_ready_n();
+  25          
+  26          void allow_e();
+  27          void allow_w();
+  28          void allow_s();
+  29          void allow_n();
+  30          
+  31          
+  32          void main()
+  33          {
+  34   1              while(1)
+  35   1              {
+  36   2                allow_e(); delay(500);
+  37   2                get_ready_w();
+  38   2      
+  39   2                allow_w(); delay(500);
+  40   2                get_ready_n();
+  41   2      
+  42   2                allow_n(); delay(500);
+  43   2                get_ready_s();
+  44   2      
+  45   2                allow_s(); delay(500);
+  46   2                get_ready_e();
+  47   2              }
+  48   1      }
+  49          
+  50          void allow_e()
+  51          {
+  52   1        e_red = 0;
+  53   1        e_green = 1;
+  54   1        e_yellow = 0;
+  55   1      
+C51 COMPILER V8.02   MAIN                                                                  05/03/2024 10:26:31 PAGE 2   
+
+  56   1        w_red = 1;
+  57   1        w_green = 0;
+  58   1        w_yellow = 0;
+  59   1      
+  60   1        s_red = 1;
+  61   1        s_green = 0;
+  62   1        s_yellow = 0;
+  63   1      
+  64   1        n_red = 1;
+  65   1        n_green = 0;
+  66   1        n_yellow = 0;
+  67   1      }
+  68          
+  69          
+  70          void allow_w()
+  71          {
+  72   1        e_red = 1;
+  73   1        e_green = 0;
+  74   1        e_yellow = 0;
+  75   1      
+  76   1        w_red = 1;
+  77   1        w_green = 0;
+  78   1        w_yellow = 0;
+  79   1      
+  80   1        s_red = 0;
+  81   1        s_green = 1;
+  82   1        s_yellow = 0;
+  83   1      
+  84   1        n_red = 1;
+  85   1        n_green = 0;
+  86   1        n_yellow = 0;
+  87   1      }
+  88          
+  89          void allow_s()
+  90          {
+  91   1        e_red = 1;
+  92   1        e_green = 0;
+  93   1        e_yellow = 0;
+  94   1      
+  95   1        w_red = 1;
+  96   1        w_green = 0;
+  97   1        w_yellow = 0;
+  98   1      
+  99   1        s_red = 0;
+ 100   1        s_green = 1;
+ 101   1        s_yellow = 0;
+ 102   1      
+ 103   1        n_red = 1;
+ 104   1        n_green = 0;
+ 105   1        n_yellow = 0;
+ 106   1      }
+ 107          
+ 108          void allow_n()
+ 109          {
+ 110   1        e_red = 1;
+ 111   1        e_green = 0;
+ 112   1        e_yellow = 0;
+ 113   1      
+ 114   1        w_red = 1;
+ 115   1        w_green = 0;
+ 116   1        w_yellow = 0;
+ 117   1      
+C51 COMPILER V8.02   MAIN                                                                  05/03/2024 10:26:31 PAGE 3   
+
+ 118   1        s_red = 1;
+ 119   1        s_green = 0;
+ 120   1        s_yellow = 0;
+ 121   1      
+ 122   1        n_red = 0;
+ 123   1        n_green = 1;
+ 124   1        n_yellow = 0;
+ 125   1      }
+ 126          
+ 127          
+ 128          void delay(int val)
+ 129          {
+ 130   1              int i,j=0;
+ 131   1              for(i=0;i<=val;i++)
+ 132   1              {
+ 133   2              for(j=0;j<=1000;j++);
+ 134   2              }
+ 135   1      }
+ 136          
+ 137          void get_ready_e()
+ 138          {
+ 139   1          int a=0;
+ 140   1              for(a=0;a<=5;a++)
+ 141   1              {
+ 142   2              e_yellow = 1; 
+ 143   2              delay(50);
+ 144   2              e_yellow = 0; 
+ 145   2              delay(50);
+ 146   2              }
+ 147   1      }
+ 148          
+ 149          void get_ready_w()
+ 150          {
+ 151   1          int a=0;
+ 152   1              for(a=0;a<=5;a++)
+ 153   1              {
+ 154   2              w_yellow = 1; 
+ 155   2              delay(50);
+ 156   2              w_yellow = 0; 
+ 157   2              delay(50);
+ 158   2              }
+ 159   1      }
+ 160          
+ 161          void get_ready_s()
+ 162          {
+ 163   1          int a=0;
+ 164   1              for(a=0;a<=5;a++)
+ 165   1              {
+ 166   2              s_yellow = 1; 
+ 167   2              delay(50);
+ 168   2              s_yellow = 0; 
+ 169   2              delay(50);
+ 170   2              }
+ 171   1      }
+ 172          
+ 173          void get_ready_n()
+ 174          {
+ 175   1          int a=0;
+ 176   1              for(a=0;a<=5;a++)
+ 177   1              {
+ 178   2              n_yellow = 1; 
+ 179   2              delay(50);
+C51 COMPILER V8.02   MAIN                                                                  05/03/2024 10:26:31 PAGE 4   
+
+ 180   2              n_yellow = 0; 
+ 181   2              delay(50);
+ 182   2              }
+ 183   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    296    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

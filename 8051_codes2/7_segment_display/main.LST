@@ -1,0 +1,48 @@
+C51 COMPILER V8.02   MAIN                                                                  05/03/2024 14:51:20 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51.h>
+   2          #define segment P2
+   3          void delay(int val);
+   4          void main()
+   5          {
+   6   1      segment = 0x3F; delay(100);
+   7   1      segment = 0x06; delay(100);
+   8   1      segment = 0x5b; delay(100);
+   9   1      segment = 0x4f; delay(100);
+  10   1      segment = 0x66; delay(100);
+  11   1      segment = 0x6d; delay(100);
+  12   1      segment = 0x7d; delay(100);
+  13   1      segment = 0x07; delay(100);
+  14   1      segment = 0x7f; delay(100);
+  15   1      segment = 0x6f; delay(100);
+  16   1      }
+  17          
+  18          void delay(int val)
+  19          {
+  20   1              int i,j=0;
+  21   1              for(i=0;i<=val;i++)
+  22   1              {
+  23   2               for(j=0;j<=1000;j++);
+  24   2              }
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    106    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
